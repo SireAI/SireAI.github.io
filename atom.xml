@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-16T07:29:13.000Z</updated>
+  <updated>2016-05-17T09:16:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,49 +16,122 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Create an exciting life</title>
-    <link href="http://yoursite.com/2016/05/13/My-New-Post/"/>
-    <id>http://yoursite.com/2016/05/13/My-New-Post/</id>
-    <published>2016-05-13T08:49:13.000Z</published>
-    <updated>2016-05-16T07:29:13.000Z</updated>
+    <title>Cocopods高级教程</title>
+    <link href="http://yoursite.com/2016/05/17/Cocopods%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2016/05/17/Cocopods高级教程/</id>
+    <published>2016-05-17T08:59:53.000Z</published>
+    <updated>2016-05-17T09:16:55.000Z</updated>
     
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Testing" scheme="http://yoursite.com/categories/Testing/"/>
-    
-    
-      <category term="激情" scheme="http://yoursite.com/tags/%E6%BF%80%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/05/13/hello-world/"/>
-    <id>http://yoursite.com/2016/05/13/hello-world/</id>
-    <published>2016-05-13T08:27:19.000Z</published>
-    <updated>2016-05-13T08:27:19.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;cocopods安装&quot;&gt;&lt;a href=&quot;#cocopods安装&quot; class=&quot;headerlink&quot; title=&quot;cocopods安装&quot;&gt;&lt;/a&gt;cocopods安装&lt;/h2&gt;&lt;p&gt;　　本教程默认Mac已经安装Ruby环境，如果没有安装Ruby，请自行搜索。　&lt;br&gt;　　如果电脑没有安装cocopods,打开终端输入以下命令：        &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo gem install cocoapods
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;　如果由于网络原因无法下载cocopods，那么我建议你使用淘宝镜像下载，具体的方式请自行搜索，并非本文重点。&lt;br&gt;如果已经安装，那么我建议你将cocopods更新到最新稳定版本，命令与上面一样。        &lt;/p&gt;
+&lt;h2 id=&quot;使用cocopods拉取远依赖库&quot;&gt;&lt;a href=&quot;#使用cocopods拉取远依赖库&quot; class=&quot;headerlink&quot; title=&quot;使用cocopods拉取远依赖库&quot;&gt;&lt;/a&gt;使用cocopods拉取远依赖库&lt;/h2&gt;&lt;p&gt;　　在拉取之前你必须确定你已经安装了cocopods。步骤如下&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建一个新的ios项目&lt;/li&gt;
+&lt;li&gt;打开电脑终端窗口 &lt;code&gt;$ cd&lt;/code&gt; 进入你的项目根目录&lt;/li&gt;
+&lt;li&gt;使用$ &lt;code&gt;pod init&lt;/code&gt; 命令创建一个Podfile文件&lt;/li&gt;
+&lt;li&gt;第一行你应当定义你支持的平台和版本，比如&lt;br&gt;&lt;code&gt;platform :ios, &amp;#39;9.0&amp;#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建目标应用部分，使用 &lt;code&gt;target &amp;#39;$TARGET_NAME&amp;#39; do&lt;/code&gt; 开头和 &lt;code&gt;end&lt;/code&gt;结束，例如        &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;target &amp;apos;MyApp&amp;apos; do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;ObjectiveSugar&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;然后保存的你Podfile文件，执行 &lt;code&gt;$ pod install&lt;/code&gt; 命令，将会自动创建新文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;找到文件中的  &lt;code&gt;&amp;#39;$TARGET_NAME&amp;#39;.xcworkspace&lt;/code&gt;,点击打开，这个文件将是你以后使用的项目打开文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Pod命令简介&quot;&gt;&lt;a href=&quot;#Pod命令简介&quot; class=&quot;headerlink&quot; title=&quot;Pod命令简介&quot;&gt;&lt;/a&gt;Pod命令简介&lt;/h2&gt;&lt;p&gt;　　许多开始使用cocopods的新手似乎都不大能分清&lt;code&gt;pod install&lt;/code&gt;和&lt;code&gt;pod update&lt;/code&gt;的作用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pod install&lt;/code&gt;:第一次给项目安装cocopods时使用，在已经有cocopods环境的项目中添加或者删除依赖库时使用。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pod update&lt;/code&gt;:主要是用来升级依赖库的版本，其中加上依赖库名字，比如 &lt;code&gt;pod update PODNAME&lt;/code&gt;将只更新这个依赖库的版本。&lt;br&gt;如果装载新的依赖库速度过慢，可以使用命令&lt;code&gt;pod install --verbose --no-repo-update&lt;/code&gt;来替代&lt;code&gt;pod install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Podfile文件&quot;&gt;&lt;a href=&quot;#Podfile文件&quot; class=&quot;headerlink&quot; title=&quot;Podfile文件&quot;&gt;&lt;/a&gt;Podfile文件&lt;/h2&gt;&lt;p&gt;　　支持一个target的podfile可能是这样子的：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;target &amp;apos;MyApp&amp;apos; do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, &amp;apos;~&amp;gt; 3.0&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;　　如果你有多个target，不同的target使用不同的库，互不影响，那么可能是这样子的：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;abstract_target &amp;apos;Shows&amp;apos; do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;ShowsKit&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;Fabric&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Has its own copy of ShowsKit + ShowWebAuth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;target &amp;apos;ShowsiOS&amp;apos; do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;ShowWebAuth&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Has its own copy of ShowsKit + ShowTVAuth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;target &amp;apos;ShowsTV&amp;apos; do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;ShowTVAuth&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;en&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;依赖库的版本&quot;&gt;&lt;a href=&quot;#依赖库的版本&quot; class=&quot;headerlink&quot; title=&quot;依赖库的版本&quot;&gt;&lt;/a&gt;依赖库的版本&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果你希望使用库最新的版本就那么只要：&lt;br&gt;&lt;code&gt;pod &amp;#39;SSZipArchive&amp;#39;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果你希望使用库的某个特定版本：&lt;br&gt;&lt;code&gt;pod &amp;#39;Objection&amp;#39;, &amp;#39;0.9&amp;#39;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用操作符来定义&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;‘&amp;gt; 0.1’ 任何大于0.1的版本&lt;/li&gt;
+&lt;li&gt;‘&amp;gt;= 0.1’ 任何大于或者等于0.1的版本&lt;/li&gt;
+&lt;li&gt;‘&amp;lt; 0.1’ 任何小于0.1的版本&lt;/li&gt;
+&lt;li&gt;‘&amp;lt;= 0.1’ 任何小于或者等于0.1的版本&lt;/li&gt;
+&lt;li&gt;‘~&amp;gt; 0.1.2’ 大于等于0.1.2版本，小于0.2版本&lt;/li&gt;
+&lt;li&gt;‘~&amp;gt; 0.1’ 大于等于0.1版本，小于1.0版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;库的路径&quot;&gt;&lt;a href=&quot;#库的路径&quot; class=&quot;headerlink&quot; title=&quot;库的路径&quot;&gt;&lt;/a&gt;库的路径&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;依赖于本地库：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, :path =&amp;gt; &amp;apos;~/Documents/AFNetworking&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用github上项目的master主干仓库：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, :git =&amp;gt; &amp;apos;https://github.com/gowalla/AFNetworking.git&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用github上项目分支仓库：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, :git =&amp;gt; &amp;apos;https://github.com/gowalla/AFNetworking.git&amp;apos;, :branch =&amp;gt; &amp;apos;dev&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;使用特定的tag版本仓库：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, :git =&amp;gt; &amp;apos;https://github.com/gowalla/AFNetworking.git&amp;apos;, :tag =&amp;gt; &amp;apos;0.7.0&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;使用某次提交的仓库：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, :git =&amp;gt; &amp;apos;https://github.com/gowalla/AFNetworking.git&amp;apos;, :commit =&amp;gt; &amp;apos;082f8319af&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;创建自己的cocopods依赖库&quot;&gt;&lt;a href=&quot;#创建自己的cocopods依赖库&quot; class=&quot;headerlink&quot; title=&quot;创建自己的cocopods依赖库&quot;&gt;&lt;/a&gt;创建自己的cocopods依赖库&lt;/h2&gt;&lt;p&gt;　　我推荐你用官方自动生成的模板来构建自己的库项目，避免自己动手去构建的错误，比如语法错误，文件位置错误。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;选择好文件位置，创建自己的库项目&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod lib create MyLib&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;期间会有些选择，根据自己的需求去打命令选择。主要有    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Objective-C or Swift&lt;/li&gt;
+&lt;li&gt;Making a Demo Application&lt;/li&gt;
+&lt;li&gt;Choosing a Test Framework&lt;/li&gt;
+&lt;li&gt;View-based Testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后的目录如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;MyLib&lt;br&gt;├── .travis.yml&lt;br&gt;├── _Pods.xcproject&lt;br&gt;├── Example&lt;br&gt;│   ├── MyLib&lt;br&gt;│   ├── MyLib.xcodeproj&lt;br&gt;│   ├── MyLib.xcworkspace&lt;br&gt;│   ├── Podfile&lt;br&gt;│   ├── Podfile.lock&lt;br&gt;│   ├── Pods&lt;br&gt;│   └── Tests&lt;br&gt;├── LICENSE&lt;br&gt;├── MyLib.podspec&lt;br&gt;├── Pod&lt;br&gt;│   ├── Assets&lt;br&gt;│   └── Classes&lt;br&gt;│     └── RemoveMe.[swift/m]&lt;br&gt;└── README.md&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;–&lt;br&gt;　　这个文件中自动包含了license , readme.md , pod描述文件。你所要做的事情就是将你的代码嵌入进去，并修改 podspec中的summary描述文字，&lt;code&gt;&amp;lt;GITHUB NAME&amp;gt;&lt;/code&gt;为你的github账户名，可选的修改和添加其他字段属性。在修改spec文件的时候要注意语法错误往往都是双引号或者单引号引起的，有的文本编辑器默认更改了了spec文件的双引号和单引号类型，你可以更正过来，一般单引号都是使用键盘上面数字1左边的的键位上的单引号，双引号可以复制其他正确引用的单引号。&lt;br&gt;　　Pod文件是你存放自己的库的地方，Example是库的使用示例代码，你可以向使用者展示下如何使用你的库。&lt;br&gt;　　注意，如果你的库是由swift语言编写，那么你需要将需要暴露给使用者的类，接口，和方法等等声明为public，否则可能会出现访问不到该类的情况。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将自己的库代码嵌入项目&lt;br&gt;在xcode编辑界面中，将自己的库代码放入 Development Pods文件夹，然后执行&lt;code&gt;pod update&lt;/code&gt;,注意库的权限一定要是public，然后项目重新编译一下。在需要使用到库的类中导入库  &lt;code&gt;import ANNetworking&lt;/code&gt; ，我建议你在自己的Example中检查下库的可用性。&lt;/li&gt;
+&lt;li&gt;使用git工具将项目push到自己的github仓库中&lt;/li&gt;
+&lt;li&gt;realse版本发布的准备&lt;br&gt;当你即将发布自己的库到cocopods的时候，你需要先使用命令&lt;code&gt;pod lib lint&lt;/code&gt;来检查下pod描述文件是否有错误，确认无误，给你的项目打上版本tag,并且push,命令如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;$ git add -A &amp;amp;&amp;amp; git commit -m &amp;quot;Release 0.0.1.&amp;quot;
+
+$ git tag &amp;apos;0.0.1&amp;apos;
+
+$ git push --tags
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;部署自己的库&lt;br&gt;在部署前先要进行错误检查，使用命令&lt;code&gt;pod lib lint&lt;/code&gt;和&lt;code&gt;pod spec lint&lt;/code&gt;,二者的区别在于，前者只会进行本地校验，后者进行github仓库和tag校验。&lt;/li&gt;
+&lt;li&gt;将pod描述文件推送到pod服务器，网络畅通情况下，一到两分钟就能看到成功的结果，命令如下：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　pod trunk push NAME.podspec&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;完成后搜索下自己传上去的库，&lt;code&gt;pod search NAME&lt;/code&gt;,最好能自己试用一下。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;h2 id=&quot;cocopods安装&quot;&gt;&lt;a href=&quot;#cocopods安装&quot; class=&quot;headerlink&quot; title=&quot;cocopods安装&quot;&gt;&lt;/a&gt;cocopods安装&lt;/h2&gt;&lt;p&gt;　　本教程默认Mac已经安装Ruby环境，如果没有安装Ruby，请自行搜索。　&lt;br&gt;　　如果电脑没有安装cocopods,打开终端输入以下命令：        &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo gem install cocoapods
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;　如果由于网络原因无法下载cocopods，那么我建议你使用淘宝镜像下载，具体的方式请自行搜索，并非本文重点。&lt;br&gt;如果已经安装，那么我建议你将cocopods更新到最新稳定版本，命令与上面一样。        &lt;/p&gt;
+&lt;h2 id=&quot;使用cocopods拉取远依赖库&quot;&gt;&lt;a href=&quot;#使用cocopods拉取远依赖库&quot; class=&quot;headerlink&quot; title=&quot;使用cocopods拉取远依赖库&quot;&gt;&lt;/a&gt;使用cocopods拉取远依赖库&lt;/h2&gt;&lt;p&gt;　　在拉取之前你必须确定你已经安装了cocopods。步骤如下&lt;br&gt;
     
     </summary>
     
+      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
