@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-07T09:58:59.000Z</updated>
+  <updated>2016-07-07T10:12:50.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,25 +16,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>内存泄露分析</title>
     <link href="http://yoursite.com/2016/07/07/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%88%86%E6%9E%90/"/>
     <id>http://yoursite.com/2016/07/07/内存泄露分析/</id>
-    <published>2016-07-07T09:58:48.000Z</published>
-    <updated>2016-07-07T09:58:59.000Z</updated>
+    <published>2016-07-07T10:07:28.000Z</published>
+    <updated>2016-07-07T10:12:50.000Z</updated>
     
-    <content type="html">&lt;p&gt;#内存泄露问题分析        &lt;/p&gt;
-&lt;p&gt;内存泄露是个程序开发中经久不衰的话题，外行人看应用外观设计，内容组织方式,来判断程序做的怎样；内行人看打开开发软件，通过观察代码架构，质量以及内存变化来判断应用质量的高低。&lt;/p&gt;
+    <content type="html">&lt;p&gt;内存泄露是个程序开发中经久不衰的话题，外行人看应用外观设计，内容组织方式,来判断程序做的怎样；内行人看打开开发软件，通过观察代码架构，质量以及内存变化来判断应用质量的高低。&lt;/p&gt;
 &lt;p&gt;因为移动端硬件设备自身的特点，内存较小，在内存的处理上尤为重要，优秀的内存处理能增加应用的流畅性，减少内存占用，提升性能，避免出现OOM异常或者是其他因对象释放而造成的程序崩溃。。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##内存泄露的定义&lt;/p&gt;
-&lt;p&gt;###定义的方式有两种&lt;/p&gt;
-&lt;p&gt;#####1.所有对象的强引用都已经不存在，但是对象仍在内存中&lt;/p&gt;
-&lt;p&gt;#####2.无用对象由于强引用没有及时释放，占用内存&lt;/p&gt;
-&lt;p&gt;##内存泄露几种常见情况&lt;/p&gt;
+&lt;h2 id=&quot;内存泄露的定义&quot;&gt;&lt;a href=&quot;#内存泄露的定义&quot; class=&quot;headerlink&quot; title=&quot;内存泄露的定义&quot;&gt;&lt;/a&gt;内存泄露的定义&lt;/h2&gt;&lt;h2 id=&quot;定义的方式有两种&quot;&gt;&lt;a href=&quot;#定义的方式有两种&quot; class=&quot;headerlink&quot; title=&quot;定义的方式有两种&quot;&gt;&lt;/a&gt;定义的方式有两种&lt;/h2&gt;&lt;p&gt;1.所有对象的强引用都已经不存在，但是对象仍在内存中&lt;/p&gt;
+&lt;p&gt;2.无用对象由于强引用没有及时释放，占用内存&lt;/p&gt;
+&lt;p&gt;#内存泄露几种常见情况&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;嵌套类，闭包，匿名内部类引起内存泄露&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;　　　　循环强引用是造成内存泄露的一种常见方式。无论是java还是swift,类都可以进行嵌套。内部类持有外部类的引用，可以直接访问外部类，这是优势，方便了方法的调用和值的传递，但也正是因为如此，内部类很容易造成内存泄露。当外部类持有内部类一个对象的强引用的时候，就会形成形成了循环强引用。类似的java中的匿名内部类和swift以及OC中的闭包都会捕获上下文对象的引用，当闭包的生命周期超过上下文对象应有的生命周期时就会发生暂时性的内存泄露，比如开启一个线程，在java中我们会使用一个Runnable对象，这个对象捕获了上下文对象的引用，，runnable对象不会结束，线程的任务就不结束，runnable对象对上下文对象的强引用就不会释放，上下文对象属于无用的对象就造成了内存泄露，闭包同理。如果上下文对象对runnale对象持有强引用，那么将形成循环强引用，彼此永远无法释放。&lt;br&gt;　　&lt;br&gt;　　&lt;br&gt;　　&lt;br&gt;　　　　iOS和Android都是单线程模型，两个平台所使用的语言中都使用runloop方式来解决事件排队问题，Android使用handler机制来做事件排队或者切换线程执行任务，当发送runnalbe任务时会造成短时间的上下文对象的内存泄露，比如我进入一个acitity活动页面，在第一个生命周期方法中使用handler向主线程发送一个runnable任务延时十秒执行，我进入页面后立即退出，观察内存可以发现activity对象并没有立即被销毁，而是过了十秒之后，当然可能是十一秒，也可能是十五秒，因为java的垃圾回收机制并不是时时刻刻都在回收的。iOS使用performSelector方法实现同样的功能，同理selector方法也会造成短时间的上下文内存泄露。&lt;/p&gt;
+&lt;p&gt;　　　　循环强引用是造成内存泄露的一种常见方式。无论是java还是swift,类都可以进行嵌套。内部类持有外部类的引用，可以直接访问外部类，这是优势，方便了方法的调用和值的传递，但也正是因为如此，内部类很容易造成内存泄露。当外部类持有内部类一个对象的强引用的时候，就会形成形成了循环强引用。类似的java中的匿名内部类和swift以及OC中的闭包都会捕获上下文对象的引用，当闭包的生命周期超过上下文对象应有的生命周期时就会发生暂时性的内存泄露，比如开启一个线程，在java中我们会使用一个Runnable对象，这个对象捕获了上下文对象的引用，，runnable对象不会结束，线程的任务就不结束，runnable对象对上下文对象的强引用就不会释放，上下文对象属于无用的对象就造成了内存泄露，闭包同理。如果上下文对象对runnale对象持有强引用，那么将形成循环强引用，彼此永远无法释放。&lt;br&gt;　　&lt;br&gt;　　&lt;br&gt;　　&lt;br&gt;　　　　iOS和Android都是单线程模型，两个平台所使用的语言中都使用runloop方式来解决事件排队问题，Android使用handler机制来做事件排队或者切换线程执行任务，当发送runnalbe任务时会造成短时间的上下文对象的内存泄露，比如我进入一个acitity活动页面，在第一个生命周期方法中使用handler向主线程发送一个runnable任务延时十秒执行，我进入页面后立即退出，观察内存可以发现activity对象并没有立即被销毁，而是过了十秒之后，当然可能是十一秒，也可能是十五秒，因为java的垃圾回收机制并不是时时刻刻都在回收的。iOS使用performSelector方法实现同样的功能，同理selector方法也会造成短时间的上下文内存泄露。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;静态方法引起内存泄露&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -53,12 +50,23 @@
     
     <summary type="html">
     
-      &lt;p&gt;#内存泄露问题分析        &lt;/p&gt;
-&lt;p&gt;内存泄露是个程序开发中经久不衰的话题，外行人看应用外观设计，内容组织方式,来判断程序做的怎样；内行人看打开开发软件，通过观察代码架构，质量以及内存变化来判断应用质量的高低。&lt;/p&gt;
-&lt;p&gt;因为移动端硬件设备自身的特点，内存较
+      &lt;p&gt;内存泄露是个程序开发中经久不衰的话题，外行人看应用外观设计，内容组织方式,来判断程序做的怎样；内行人看打开开发软件，通过观察代码架构，质量以及内存变化来判断应用质量的高低。&lt;/p&gt;
+&lt;p&gt;因为移动端硬件设备自身的特点，内存较小，在内存的处理上尤为重要，优秀的内存处理能增加应用的流畅性，减少内存占用，提升性能，避免出现OOM异常或者是其他因对象释放而造成的程序崩溃。。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;内存泄露的定义&quot;&gt;&lt;a href=&quot;#内存泄露的定义&quot; class=&quot;headerlink&quot; title=&quot;内存泄露的定义&quot;&gt;&lt;/a&gt;内存泄露的定义&lt;/h2&gt;&lt;h2 id=&quot;定义的方式有两种&quot;&gt;&lt;a href=&quot;#定义的方式有两种&quot; class=&quot;headerlink&quot; title=&quot;定义的方式有两种&quot;&gt;&lt;/a&gt;定义的方式有两种&lt;/h2&gt;&lt;p&gt;1.所有对象的强引用都已经不存在，但是对象仍在内存中&lt;/p&gt;
+&lt;p&gt;2.无用对象由于强引用没有及时释放，占用内存&lt;/p&gt;
+&lt;p&gt;#内存泄露几种常见情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;嵌套类，闭包，匿名内部类引起内存泄露&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　　　循环强引用是造成内存泄露的一种常见方式。无论是java还是swift,类都可以进行嵌套。内部类持有外部类的引用，可以直接访问外部类，这是优势，方便了方法的调用和值的传递，但也正是因为如此，内部类很容易造成内存泄露。当外部类持有内部类一个对象的强引用的时候，就会形成形成了循环强引用。类似的java中的匿名内部类和swift以及OC中的闭包都会捕获上下文对象的引用，当闭包的生命周期超过上下文对象应有的生命周期时就会发生暂时性的内存泄露，比如开启一个线程，在java中我们会使用一个Runnable对象，这个对象捕获了上下文对象的引用，，runnable对象不会结束，线程的任务就不结束，runnable对象对上下文对象的强引用就不会释放，上下文对象属于无用的对象就造成了内存泄露，闭包同理。如果上下文对象对runnale对象持有强引用，那么将形成循环强引用，彼此永远无法释放。&lt;br&gt;　　&lt;br&gt;　　&lt;br&gt;　　&lt;br&gt;　　　　iOS和Android都是单线程模型，两个平台所使用的语言中都使用runloop方式来解决事件排队问题，Android使用handler机制来做事件排队或者切换线程执行任务，当发送runnalbe任务时会造成短时间的上下文对象的内存泄露，比如我进入一个acitity活动页面，在第一个生命周期方法中使用handler向主线程发送一个runnable任务延时十秒执行，我进入页面后立即退出，观察内存可以发现activity对象并没有立即被销毁，而是过了十秒之后，当然可能是十一秒，也可能是十五秒，因为java的垃圾回收机制并不是时时刻刻都在回收的。iOS使用performSelector方法实现同样的功能，同理selector方法也会造成短时间的上下文内存泄露。&lt;br&gt;
     
     </summary>
     
+      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
