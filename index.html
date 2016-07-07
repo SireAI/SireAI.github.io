@@ -278,6 +278,134 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/07/内存泄露分析/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-07T17:58:48+08:00" content="2016-07-07">
+              2016-07-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/07/内存泄露分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/07/内存泄露分析/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#内存泄露问题分析        </p>
+<p>内存泄露是个程序开发中经久不衰的话题，外行人看应用外观设计，内容组织方式,来判断程序做的怎样；内行人看打开开发软件，通过观察代码架构，质量以及内存变化来判断应用质量的高低。</p>
+<p>因为移动端硬件设备自身的特点，内存较小，在内存的处理上尤为重要，优秀的内存处理能增加应用的流畅性，减少内存占用，提升性能，避免出现OOM异常或者是其他因对象释放而造成的程序崩溃。。</p>
+<hr>
+<p>##内存泄露的定义</p>
+<p>###定义的方式有两种</p>
+<p>#####1.所有对象的强引用都已经不存在，但是对象仍在内存中</p>
+<p>#####2.无用对象由于强引用没有及时释放，占用内存</p>
+<p>##内存泄露几种常见情况</p>
+<ul>
+<li><strong>嵌套类，闭包，匿名内部类引起内存泄露</strong></li>
+</ul>
+<p>　　　　循环强引用是造成内存泄露的一种常见方式。无论是java还是swift,类都可以进行嵌套。内部类持有外部类的引用，可以直接访问外部类，这是优势，方便了方法的调用和值的传递，但也正是因为如此，内部类很容易造成内存泄露。当外部类持有内部类一个对象的强引用的时候，就会形成形成了循环强引用。类似的java中的匿名内部类和swift以及OC中的闭包都会捕获上下文对象的引用，当闭包的生命周期超过上下文对象应有的生命周期时就会发生暂时性的内存泄露，比如开启一个线程，在java中我们会使用一个Runnable对象，这个对象捕获了上下文对象的引用，，runnable对象不会结束，线程的任务就不结束，runnable对象对上下文对象的强引用就不会释放，上下文对象属于无用的对象就造成了内存泄露，闭包同理。如果上下文对象对runnale对象持有强引用，那么将形成循环强引用，彼此永远无法释放。<br>　　<br>　　<br>　　<br>　　　　iOS和Android都是单线程模型，两个平台所使用的语言中都使用runloop方式来解决事件排队问题，Android使用handler机制来做事件排队或者切换线程执行任务，当发送runnalbe任务时会造成短时间的上下文对象的内存泄露，比如我进入一个acitity活动页面，在第一个生命周期方法中使用handler向主线程发送一个runnable任务延时十秒执行，我进入页面后立即退出，观察内存可以发现activity对象并没有立即被销毁，而是过了十秒之后，当然可能是十一秒，也可能是十五秒，因为java的垃圾回收机制并不是时时刻刻都在回收的。iOS使用performSelector方法实现同样的功能，同理selector方法也会造成短时间的上下文内存泄露。</p>
+<ul>
+<li><strong>静态方法引起内存泄露</strong></li>
+</ul>
+<p>　　　静态引用持有的对象的生命周期与整个应用一样长，因此静态引用如果持有一个大额数据对象，那么造成的内存泄露是十分严重的，比如Android中的context对象，视图对象等，使用静态引用一定要谨慎，当然静态引用也能在某些情况为性能的优化做出贡献，比如多次重复性的创建同一个大内存对象，我们可以在可控的范畴里将对象定义为静态引用，避免重复创建，在适当的生命周期方法中置空静态引用就行了
+　　　</p>
+<hr>
+<p>　　　上面讨论的内存泄露情况都是每一次的操作上的内存泄露，假设一个iOS应用中的一个页面，用户进入一次就造成controller循环强引用的内存泄露,那么多次操作这种内存泄露就会累计，可以想象，如果用户重复操作页面的进入与退出，应用肯定会因为内存泄露而崩溃，因此一个优秀的应用，内存上的优化处理是十分必要的。
+　　　</p>
+<p>##内存泄露的解决方案</p>
+<p>　　　我认为对象的引用关系不能仅仅以直接引用持有关系来判定，比如A对象的成员属性中有B对象，那么我们称A对象持有B对象的引用，如果B对象中的成员属性中有C对象，那么我们称B对象持有C对象的引用，如果此时C中的成员属性有A对象，那么这三者又会形成循环强引用，一种间接的循环强引用，这种间接形成的循环强引用大多数时候是不易察觉的，因此我们所能做的是在类中持有对象引用的时候要万分注意，思考和避免强引用的形成。</p>
+<p>　　对象的释放是有顺序的，一个对象无法释放，这个对象内部持有的强引用的对象也将无法释放；一个对象一旦释放，那么这个对象所持有的所有引用也将释放。举个例子，比如controller对象无法释放，那么controller对象所持有的其他对象比如视图对象view，其他的一些开发者自己定义的对象都无法释放。<br>我建议持有系统组件对象比如Android的Activity，iOS的UIViewController的引用都为弱引用，唯一的强引用让系统框架自身持有，这样能很大程度避免内存泄露，这也就要求了，在使用组件对象作为代理模式中的代理对象的时候，代理对象的引用要为弱引用，我们可以翻看iOS的部分View组件的源码，比如UITableView，它的delegate和dataSource代理对象的引用都是弱引用，我们大多数时候都会将controller或者Activity作为代理，因此这样去定义代理对象的引用是十分必要的。我们经常自定义view，然后将view的相关行为方法通过接口代理出去，试想，如果view中的代理对象是强引用，并将代理对象设置为controller而自定义view在controller持有的对象view中，这就形成了间接的循环强应用，造成了内存泄露</p>
+<p>尽量保证一个对象只有一个强引用，这也是解决循环强引用的方式。系统对象的引用尽量为弱引用，因为强引用在系统框架中已经有了。</p>
+<p>在某些情况下，弱引用的使用能给我们的开发带来便利。我们经常需要解决一种情况，页面已经回退，但是请求仍然没有着陆在外面飞，造成了暂时性的业务逻辑对象的内存泄露；在swift中如果使用unowned self来声明不捕获业务逻辑对象有时候会造成崩溃，原因很简单，就是对象已经被回收了，但是在网络回调方法中试图调用这个对象的方法。</p>
+<p>我们可以网络回调方法中使用若引用来修饰逻辑对象，在controller中使用业务对象的强引用。当页面回退后，controller对象销毁，那么业务逻辑对象的强引用也销毁ARC引用计数个数为0，业务逻辑对象销毁，网络请求回来后，若引用业务逻辑对象已经被回收，方法就不会调用，省去了很多对象非空的判断，代码也更加优雅。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/17/Cocopods高级教程/" itemprop="url">
                   Cocopods高级教程
                 </a>
@@ -424,7 +552,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
