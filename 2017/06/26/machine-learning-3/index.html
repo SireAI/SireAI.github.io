@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="技术教程," />
 
 
 
@@ -86,15 +86,29 @@
 
 
 
-<meta name="description" content="如果你觉得你做事情毫不费力，那么就是浪费时间">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sire的技术生活">
-<meta property="og:url" content="http://yoursite.com/archives/2016/05/index.html">
+<meta name="description" content="如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线的走向。
+当我们求解出了参数值，对模型进行了拟合后，需要评价模型预测的精度如何，需要一个对模型的评价标准，代价函数便是做这样的工作。
+在线性回归问题中，常用的代价函数是方差平方和（也叫最小二乘法）。使用预测值与真实值差值的平房和来对模型的精度进行评价。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习——代价函数">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/machine-learning-3/index.html">
 <meta property="og:site_name" content="Sire的技术生活">
-<meta property="og:description" content="如果你觉得你做事情毫不费力，那么就是浪费时间">
+<meta property="og:description" content="如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线的走向。
+当我们求解出了参数值，对模型进行了拟合后，需要评价模型预测的精度如何，需要一个对模型的评价标准，代价函数便是做这样的工作。
+在线性回归问题中，常用的代价函数是方差平方和（也叫最小二乘法）。使用预测值与真实值差值的平房和来对模型的精度进行评价。">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午7.03.02.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午7.17.28.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午7.18.44.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午7.41.28.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午7.49.54.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午8.00.00.png">
+<meta property="og:updated_time" content="2017-06-26T02:25:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sire的技术生活">
-<meta name="twitter:description" content="如果你觉得你做事情毫不费力，那么就是浪费时间">
+<meta name="twitter:title" content="机器学习——代价函数">
+<meta name="twitter:description" content="如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线的走向。
+当我们求解出了参数值，对模型进行了拟合后，需要评价模型预测的精度如何，需要一个对模型的评价标准，代价函数便是做这样的工作。
+在线性回归问题中，常用的代价函数是方差平方和（也叫最小二乘法）。使用预测值与真实值差值的平房和来对模型的精度进行评价。">
+<meta name="twitter:image" content="http://yoursite.com/images/屏幕快照 2017-06-25 下午7.03.02.png">
 
 
 
@@ -112,7 +126,7 @@
   };
 </script>
 
-  <title> 归档 | Sire的技术生活 </title>
+  <title> 机器学习——代价函数 | Sire的技术生活 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +157,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,66 +268,186 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                机器学习——代价函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-26T09:02:37+08:00" content="2017-06-26">
+              2017-06-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/26/machine-learning-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/26/machine-learning-3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p><img src="/images/屏幕快照 2017-06-25 下午7.03.02.png" alt=""></p>
+<p>如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线的走向。</p>
+<p>当我们求解出了参数值，对模型进行了拟合后，需要评价模型预测的精度如何，需要一个对模型的评价标准，代价函数便是做这样的工作。</p>
+<p>在线性回归问题中，常用的代价函数是方差平方和（也叫最小二乘法）。使用预测值与真实值差值的平房和来对模型的精度进行评价。</p>
+<p><img src="/images/屏幕快照 2017-06-25 下午7.17.28.png" alt=""></p>
+<p>最合理的参数值应当使代价函数的值最小，由此参数的求解问题，转化到数学求极值问题。</p>
+<p><img src="/images/屏幕快照 2017-06-25 下午7.18.44.png" alt=""></p>
+<p>而代价函数的极值问题，不同的函数其极值的分布可能是复杂的，比较简单的二次函数的代价函数模型可能如下：</p>
+<p><img src="/images/屏幕快照 2017-06-25 下午7.41.28.png" alt=""></p>
+<p>显然当参数值取1的时候函数取最小值，由此确定参数值</p>
+<p>假设现在需要求的参数值有两个，那么最后的图可能是这样的：</p>
+<p><img src="/images/屏幕快照 2017-06-25 下午7.49.54.png" alt=""></p>
+<p>我们去掉J轴，用地理学中等高线的概念的表示上面的三维图，等高线的高度从外圈向内圈递减，同一条线的上J轴值相等如下右图所示：</p>
+<p><img src="/images/屏幕快照 2017-06-25 下午8.00.00.png" alt=""></p>
+<p>在这两个参数所建立的二维坐标系中，每确定一组参数值，将有对应的J轴值，由图可知，J轴的最小值是最小圆的中心点。。</p>
+<p>对于更多为的参数，我们无法画出这样的图形进行人工筛选求解，会通过梯段算法或者牛顿方法进行求解</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术教程/" rel="tag">#技术教程</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/26/machine-learning-4/" rel="next" title="机器学习——梯度下降">
+                <i class="fa fa-chevron-left"></i> 机器学习——梯度下降
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/26/machine-learning-2/" rel="prev" title="机器学习——线性回归">
+                机器学习——线性回归 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/17/Cocopods高级教程/" itemprop="url">
-              
-                <span itemprop="name">Cocopods高级教程</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-17T16:59:53+08:00"
-              content="2016-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/06/26/machine-learning-3/"
+     data-title="机器学习——代价函数"
+     data-content=""
+     data-url="http://yoursite.com/2017/06/26/machine-learning-3/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  </section>
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -321,6 +455,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/06/26/machine-learning-3/"
+           data-title="机器学习——代价函数" data-url="http://yoursite.com/2017/06/26/machine-learning-3/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -340,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -409,6 +560,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -512,11 +674,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

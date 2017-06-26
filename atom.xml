@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-07T10:12:50.000Z</updated>
+  <updated>2017-06-26T02:00:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,140 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习——线性回归</title>
+    <link href="http://yoursite.com/2017/06/26/machine-learning-2/"/>
+    <id>http://yoursite.com/2017/06/26/machine-learning-2/</id>
+    <published>2017-06-26T01:02:37.000Z</published>
+    <updated>2017-06-26T02:00:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;假设我们有一个房价问题&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.48.21.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;给定的样本数据如图所示，现在需要根据这些点拟合出一个线性函数，以便于进行房价预测。&lt;/p&gt;
+&lt;p&gt;将样本数据进行整理如下:&lt;br&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.50.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;m表示样本个数，x表示输入值，y表示输入出值。&lt;/p&gt;
+&lt;p&gt;使用&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.53.56.png&quot; alt=&quot;&quot;&gt;表示样本第i行样本数据。&lt;/p&gt;
+&lt;p&gt;我们通过如如样本数据给学习算法，确定学习算法的参数值后得到学习算法，然后使用学习算法进行输出值的预测。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.56.41.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设我们有一个房价问题&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.48.21.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;给定的样本数据如图所示，现在需要根据这些点拟合出一个线性函数，以便于进行房价预测。&lt;/p&gt;
+&lt;p&gt;将样本数据
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习——代价函数</title>
+    <link href="http://yoursite.com/2017/06/26/machine-learning-3/"/>
+    <id>http://yoursite.com/2017/06/26/machine-learning-3/</id>
+    <published>2017-06-26T01:02:37.000Z</published>
+    <updated>2017-06-26T02:25:35.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.03.02.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线的走向。&lt;/p&gt;
+&lt;p&gt;当我们求解出了参数值，对模型进行了拟合后，需要评价模型预测的精度如何，需要一个对模型的评价标准，代价函数便是做这样的工作。&lt;/p&gt;
+&lt;p&gt;在线性回归问题中，常用的代价函数是方差平方和（也叫最小二乘法）。使用预测值与真实值差值的平房和来对模型的精度进行评价。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.17.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最合理的参数值应当使代价函数的值最小，由此参数的求解问题，转化到数学求极值问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.18.44.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;而代价函数的极值问题，不同的函数其极值的分布可能是复杂的，比较简单的二次函数的代价函数模型可能如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.41.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;显然当参数值取1的时候函数取最小值，由此确定参数值&lt;/p&gt;
+&lt;p&gt;假设现在需要求的参数值有两个，那么最后的图可能是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.49.54.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们去掉J轴，用地理学中等高线的概念的表示上面的三维图，等高线的高度从外圈向内圈递减，同一条线的上J轴值相等如下右图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午8.00.00.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在这两个参数所建立的二维坐标系中，每确定一组参数值，将有对应的J轴值，由图可知，J轴的最小值是最小圆的中心点。。&lt;/p&gt;
+&lt;p&gt;对于更多为的参数，我们无法画出这样的图形进行人工筛选求解，会通过梯段算法或者牛顿方法进行求解&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.03.02.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习——梯度下降</title>
+    <link href="http://yoursite.com/2017/06/26/machine-learning-4/"/>
+    <id>http://yoursite.com/2017/06/26/machine-learning-4/</id>
+    <published>2017-06-26T01:02:37.000Z</published>
+    <updated>2017-06-26T02:32:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt; 本讲讲解梯度下降。&lt;br&gt;问题：对于关于参数的函数J，求解参数值是的J的取值最小&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午10.23.53.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;主要思想：先任意设置参数初始值，通过不断迭代逐步使得J的取值达到最小，直到小于我们设定的阈值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午10.30.35.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;形象的说法：我们将函数平面看成是地形图，我们任意的站在山坡，希冀能以最快到速度跑到山底，那么选择什么方向最快呢，当然是&lt;br&gt;最陡峭的方向最快，这样在固定步长下，每步都选择最陡峭的方向往下走，当然可以最快跑到山底。这就是梯度下降原理的形象比喻，其中“最陡峭的方向”&lt;br&gt;在函数中即是函数在该点的梯度方向，通过梯度下降，总能找到局部最低点，并且不同的初始值可能会影响最终的最低点。&lt;/p&gt;
+&lt;p&gt;具体公式表达如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午10.57.16.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上图的参数更新方式注意两点：一是参数值是多个的情况下，每步迭代需要对每个参数进行梯度求导和计算&lt;br&gt;二是正确的参数迭代过程应当如上左图所示，右图的参数更新方式会将前一个已经更新的参数代入未更新的参数中进行更新，这会产生微小的错误。&lt;br&gt;方向导数前的系数疏于上叫做学习速率，学习速率太小会导致迭代次数多，学习速率太大，有可能会错过最优点。&lt;/p&gt;
+&lt;p&gt;随着梯度下降算法的迭代，约接近最小值，每次迭代的该变量会越来越小，这是因为接近最小值是梯度方向越来越缓，当找到最小点是，该点的偏导数为0.&lt;/p&gt;
+&lt;p&gt;迭代逼近：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午11.48.06.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以上的梯度下降称为批梯度下降，“批”的概念体现在每次迭代都需要遍历全部的样本，对应的还有随机梯度下降，每次只用一个样本，但是精度上比前者低。&lt;/p&gt;
+&lt;p&gt;梯度下降求得最优解一般是局部最优解，当代价函数是凸函数时，求得的是全局最优解。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; 本讲讲解梯度下降。&lt;br&gt;问题：对于关于参数的函数J，求解参数值是的J的取值最小&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午10.23.53.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;主要思想：先任意设置参数初始值，通过不断迭代逐
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习——学习类型</title>
+    <link href="http://yoursite.com/2017/06/26/machine-learning-1/"/>
+    <id>http://yoursite.com/2017/06/26/machine-learning-1/</id>
+    <published>2017-06-26T00:41:19.000Z</published>
+    <updated>2017-06-26T01:52:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;监督学习：算法的训练有训练集数据和测试集数据，并且数据集都要正确的实际答案，基于这些数据进行算法的建模，并用此模型对给定的输入值，预测输出。应用领域如股市预测，房价预测等。&lt;/p&gt;
+&lt;p&gt;无监督学习：给定一个数据即，没有人告诉你改如何处理，也不知道数据的类别，你需要依据这些数据进行建模，找出这些数据集中数据的关系，比如聚类。应用领域有客户分组，认知识别等。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;监督学习：算法的训练有训练集数据和测试集数据，并且数据集都要正确的实际答案，基于这些数据进行算法的建模，并用此模型对给定的输入值，预测输出。应用领域如股市预测，房价预测等。&lt;/p&gt;
+&lt;p&gt;无监督学习：给定一个数据即，没有人告诉你改如何处理，也不知道数据的类别，你需要依据这些
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>内存泄露分析</title>
