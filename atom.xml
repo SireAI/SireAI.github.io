@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-03T00:29:03.000Z</updated>
+  <updated>2017-07-03T00:32:34.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习——微积分求极值</title>
+    <link href="http://yoursite.com/2017/07/03/machine-learning-6/"/>
+    <id>http://yoursite.com/2017/07/03/machine-learning-6/</id>
+    <published>2017-07-03T01:02:37.000Z</published>
+    <updated>2017-07-03T00:32:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;求代价函数最小值问题，如果是正规方程，我们可以对每个参数值求导并令导数为0。&lt;br&gt;我们队最小二乘法进行参数求导，最终得到的关系如上图所示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-28 下午11.40.00.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如果使用了正规方程，那么就不需要进行特征缩放（特征变量归一化处理，便于进行梯度下降）取相似范围，因为最终算出来的结果是一样的.&lt;/p&gt;
+&lt;p&gt;我们可以使用matlab或者Octave来进行正规方程的计算。&lt;br&gt;推荐使用pin函数来进行计算，因为正规方程中设计的矩阵逆运算，即是矩阵没有逆矩阵也会给出结果。&lt;br&gt;那么是什么导致举证不可逆呢？&lt;/p&gt;
+&lt;p&gt;存在多余的相似特征，我们可以删除他&lt;/p&gt;
+&lt;p&gt;太多的特征导致行数小于列数，我们可以通过删减特征以使举证为方阵，矩阵的可逆是建立在方阵基础上的&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;求代价函数最小值问题，如果是正规方程，我们可以对每个参数值求导并令导数为0。&lt;br&gt;我们队最小二乘法进行参数求导，最终得到的关系如上图所示&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习——特征缩放</title>
@@ -38,36 +68,6 @@
     
       &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;特征缩放一般希望将特征值缩放到-1  到  1之间或者非常相近的区域之间，这样做的原因是为了便于梯度下降算法运行的更快。&lt;br&gt;只要缩放到相近似的
-    
-    </summary>
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习——微积分求极值</title>
-    <link href="http://yoursite.com/2017/07/03/machine-learning-6/"/>
-    <id>http://yoursite.com/2017/07/03/machine-learning-6/</id>
-    <published>2017-07-03T01:02:37.000Z</published>
-    <updated>2017-07-03T00:32:34.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;求代价函数最小值问题，如果是正规方程，我们可以对每个参数值求导并令导数为0。&lt;br&gt;我们队最小二乘法进行参数求导，最终得到的关系如上图所示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-28 下午11.40.00.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如果使用了正规方程，那么就不需要进行特征缩放（特征变量归一化处理，便于进行梯度下降）取相似范围，因为最终算出来的结果是一样的.&lt;/p&gt;
-&lt;p&gt;我们可以使用matlab或者Octave来进行正规方程的计算。&lt;br&gt;推荐使用pin函数来进行计算，因为正规方程中设计的矩阵逆运算，即是矩阵没有逆矩阵也会给出结果。&lt;br&gt;那么是什么导致举证不可逆呢？&lt;/p&gt;
-&lt;p&gt;存在多余的相似特征，我们可以删除他&lt;/p&gt;
-&lt;p&gt;太多的特征导致行数小于列数，我们可以通过删减特征以使举证为方阵，矩阵的可逆是建立在方阵基础上的&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;求代价函数最小值问题，如果是正规方程，我们可以对每个参数值求导并令导数为0。&lt;br&gt;我们队最小二乘法进行参数求导，最终得到的关系如上图所示&lt;/p&gt;
     
     </summary>
     
@@ -126,39 +126,6 @@
   </entry>
   
   <entry>
-    <title>机器学习——线性回归</title>
-    <link href="http://yoursite.com/2017/06/26/machine-learning-2/"/>
-    <id>http://yoursite.com/2017/06/26/machine-learning-2/</id>
-    <published>2017-06-26T01:02:37.000Z</published>
-    <updated>2017-06-26T02:00:32.000Z</updated>
-    
-    <content type="html">&lt;p&gt;假设我们有一个房价问题&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.48.21.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;给定的样本数据如图所示，现在需要根据这些点拟合出一个线性函数，以便于进行房价预测。&lt;/p&gt;
-&lt;p&gt;将样本数据进行整理如下:&lt;br&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.50.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;m表示样本个数，x表示输入值，y表示输入出值。&lt;/p&gt;
-&lt;p&gt;使用&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.53.56.png&quot; alt=&quot;&quot;&gt;表示样本第i行样本数据。&lt;/p&gt;
-&lt;p&gt;我们通过如如样本数据给学习算法，确定学习算法的参数值后得到学习算法，然后使用学习算法进行输出值的预测。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.56.41.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;假设我们有一个房价问题&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.48.21.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;给定的样本数据如图所示，现在需要根据这些点拟合出一个线性函数，以便于进行房价预测。&lt;/p&gt;
-&lt;p&gt;将样本数据
-    
-    </summary>
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title>机器学习——代价函数</title>
     <link href="http://yoursite.com/2017/06/26/machine-learning-3/"/>
     <id>http://yoursite.com/2017/06/26/machine-learning-3/</id>
@@ -187,6 +154,39 @@
     
       &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午7.03.02.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;如上所示，给定一个训练集，假设数据拟合的模型结构为一元线性结构，我们需要解决的问题是如何根据数据集，求解出合适的参数值。不同的参数值决定了拟合直线
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习——线性回归</title>
+    <link href="http://yoursite.com/2017/06/26/machine-learning-2/"/>
+    <id>http://yoursite.com/2017/06/26/machine-learning-2/</id>
+    <published>2017-06-26T01:02:37.000Z</published>
+    <updated>2017-06-26T02:00:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;假设我们有一个房价问题&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.48.21.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;给定的样本数据如图所示，现在需要根据这些点拟合出一个线性函数，以便于进行房价预测。&lt;/p&gt;
+&lt;p&gt;将样本数据进行整理如下:&lt;br&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.50.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;m表示样本个数，x表示输入值，y表示输入出值。&lt;/p&gt;
+&lt;p&gt;使用&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.53.56.png&quot; alt=&quot;&quot;&gt;表示样本第i行样本数据。&lt;/p&gt;
+&lt;p&gt;我们通过如如样本数据给学习算法，确定学习算法的参数值后得到学习算法，然后使用学习算法进行输出值的预测。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.56.41.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设我们有一个房价问题&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午6.48.21.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;给定的样本数据如图所示，现在需要根据这些点拟合出一个线性函数，以便于进行房价预测。&lt;/p&gt;
+&lt;p&gt;将样本数据
     
     </summary>
     
