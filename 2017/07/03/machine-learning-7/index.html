@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="技术教程," />
 
 
 
@@ -86,15 +86,44 @@
 
 
 
-<meta name="description" content="如果你觉得你做事情毫不费力，那么就是浪费时间">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sire的技术生活">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="一个这样的例子：0表示没有得肿瘤 1表示得了恶性肿瘤，在二维坐标系上建立关系，横轴表示肿瘤大小，纵轴代表是否得了恶性肿瘤。
+
+我们画一条线去拟合这些点，设置一个阈值，比如0.5，函数输出值大于0.5归类1  ，函数小于0.5归类0。
+
+当我们仅仅用线性回归去拟合，线性回归的的取值域往往不在[0,1]之间，这显然是不合理的。
+下面引出logistic线性回归，解决二分类问题。
+上面说到，我们希望函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习——分类及其代价函数">
+<meta property="og:url" content="http://yoursite.com/2017/07/03/machine-learning-7/index.html">
 <meta property="og:site_name" content="Sire的技术生活">
-<meta property="og:description" content="如果你觉得你做事情毫不费力，那么就是浪费时间">
+<meta property="og:description" content="一个这样的例子：0表示没有得肿瘤 1表示得了恶性肿瘤，在二维坐标系上建立关系，横轴表示肿瘤大小，纵轴代表是否得了恶性肿瘤。
+
+我们画一条线去拟合这些点，设置一个阈值，比如0.5，函数输出值大于0.5归类1  ，函数小于0.5归类0。
+
+当我们仅仅用线性回归去拟合，线性回归的的取值域往往不在[0,1]之间，这显然是不合理的。
+下面引出logistic线性回归，解决二分类问题。
+上面说到，我们希望函">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午4.34.12.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午4.39.02.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午4.46.28.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午5.00.33.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午5.12.57.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午5.26.28.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午5.30.40.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午5.42.16.png">
+<meta property="og:image" content="http://yoursite.com/images/屏幕快照 2017-07-02 下午6.00.46.png">
+<meta property="og:updated_time" content="2017-07-03T00:40:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sire的技术生活">
-<meta name="twitter:description" content="如果你觉得你做事情毫不费力，那么就是浪费时间">
+<meta name="twitter:title" content="机器学习——分类及其代价函数">
+<meta name="twitter:description" content="一个这样的例子：0表示没有得肿瘤 1表示得了恶性肿瘤，在二维坐标系上建立关系，横轴表示肿瘤大小，纵轴代表是否得了恶性肿瘤。
+
+我们画一条线去拟合这些点，设置一个阈值，比如0.5，函数输出值大于0.5归类1  ，函数小于0.5归类0。
+
+当我们仅仅用线性回归去拟合，线性回归的的取值域往往不在[0,1]之间，这显然是不合理的。
+下面引出logistic线性回归，解决二分类问题。
+上面说到，我们希望函">
+<meta name="twitter:image" content="http://yoursite.com/images/屏幕快照 2017-06-30 下午4.34.12.png">
 
 
 
@@ -112,7 +141,7 @@
   };
 </script>
 
-  <title> 归档 | Sire的技术生活 </title>
+  <title> 机器学习——分类及其代价函数 | Sire的技术生活 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +172,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,367 +283,193 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 9 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/03/machine-learning-5/" itemprop="url">
-              
-                <span itemprop="name">机器学习——特征缩放</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-03T09:02:37+08:00"
-              content="2017-07-03" >
-          07-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/03/machine-learning-6/" itemprop="url">
-              
-                <span itemprop="name">机器学习——微积分求极值</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-03T09:02:37+08:00"
-              content="2017-07-03" >
-          07-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/03/machine-learning-7/" itemprop="url">
-              
-                <span itemprop="name">机器学习——分类及其代价函数</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-03T09:02:37+08:00"
-              content="2017-07-03" >
-          07-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/26/machine-learning-2/" itemprop="url">
-              
-                <span itemprop="name">机器学习——线性回归</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-26T09:02:37+08:00"
-              content="2017-06-26" >
-          06-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/26/machine-learning-3/" itemprop="url">
-              
-                <span itemprop="name">机器学习——代价函数</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-26T09:02:37+08:00"
-              content="2017-06-26" >
-          06-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/26/machine-learning-4/" itemprop="url">
-              
-                <span itemprop="name">机器学习——梯度下降</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-26T09:02:37+08:00"
-              content="2017-06-26" >
-          06-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/26/machine-learning-1/" itemprop="url">
-              
-                <span itemprop="name">机器学习——学习类型</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-26T08:41:19+08:00"
-              content="2017-06-26" >
-          06-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/07/内存泄露分析/" itemprop="url">
-              
-                <span itemprop="name">内存泄露分析</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-07T18:07:28+08:00"
-              content="2016-07-07" >
-          07-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/17/Cocopods高级教程/" itemprop="url">
-              
-                <span itemprop="name">Cocopods高级教程</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-17T16:59:53+08:00"
-              content="2016-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                机器学习——分类及其代价函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-03T09:02:37+08:00" content="2017-07-03">
+              2017-07-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/07/03/machine-learning-7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/03/machine-learning-7/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/屏幕快照 2017-06-30 下午4.34.12.png" alt=""></p>
+<p>一个这样的例子：0表示没有得肿瘤 1表示得了恶性肿瘤，在二维坐标系上建立关系，横轴表示肿瘤大小，纵轴代表是否得了恶性肿瘤。</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午4.39.02.png" alt=""></p>
+<p>我们画一条线去拟合这些点，设置一个阈值，比如0.5，函数输出值大于0.5归类1  ，函数小于0.5归类0。</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午4.46.28.png" alt=""></p>
+<p>当我们仅仅用线性回归去拟合，线性回归的的取值域往往不在[0,1]之间，这显然是不合理的。</p>
+<p>下面引出logistic线性回归，解决二分类问题。</p>
+<p>上面说到，我们希望函数的输出在0与1之间，logistic线性函数即满足这种特征，logistic函数解决了输出值必须在0，1内的问题，但是划分边界需要假设函数（决策边界）自己去定义。<br>hθ(x)=g(θTx)<br>z=θTx<br>g(z)=11+e−z</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午5.00.33.png" alt=""></p>
+<p>我们预测一个病人得了恶性肿瘤的概率<br>P(y=1|x;theTa)  读作在给定x，参数为theTa的情况下，得了恶性肿瘤的概率。</p>
+<p>决策边界</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午5.12.57.png" alt=""></p>
+<p>假设函数为</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午5.26.28.png" alt=""></p>
+<p>有图可知，要是y = 1 ，那么g(z)必须大于或等于0.5 ，此时,z&gt;0,即h(x)&gt;=0<br>假设参数已经知道，分别  -3 ，1，1，那么假设函数为<br>h(x) = -3 + x1 + x2;<br>-3+x1+x2 &gt;=0</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午5.30.40.png" alt=""></p>
+<p>那么这条线成为决策边界，那么h(x)=0实际上就是决策边界。但是并非所有情况下，决策边界都是线性的。</p>
+<p><img src="/images/屏幕快照 2017-06-30 下午5.42.16.png" alt=""></p>
+<p>如图所示，决策边界应当是个圆形，那么我我们可以使用多项式的方式去拟合这个边界。</p>
+<p>逻辑回归的代价函数</p>
+<p>我们不能直接使用最小二乘法作为逻辑回归的代价函数，因为将函数带入后会发现，代价函数是非凸函数，这给求极值带来了困难。因为h(x)的值域为[0,1]<br>我们使用去log的方式代替<br>J(θ)=1m∑i=1mCost(hθ(x(i)),y(i))<br>Cost(hθ(x),y)=−log(hθ(x)) if y = 1<br>Cost(hθ(x),y)=−log(1−hθ(x)) if y = 0</p>
+<p><img src="/images/屏幕快照 2017-07-02 下午6.00.46.png" alt=""></p>
+<p>通过变换代价函数为等方向的凸，使得求极值跟容易。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术教程/" rel="tag">#技术教程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/26/machine-learning-2/" rel="next" title="机器学习——线性回归">
+                <i class="fa fa-chevron-left"></i> 机器学习——线性回归
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/03/machine-learning-6/" rel="prev" title="机器学习——微积分求极值">
+                机器学习——微积分求极值 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/07/03/machine-learning-7/"
+     data-title="机器学习——分类及其代价函数"
+     data-content=""
+     data-url="http://yoursite.com/2017/07/03/machine-learning-7/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -622,6 +477,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/07/03/machine-learning-7/"
+           data-title="机器学习——分类及其代价函数" data-url="http://yoursite.com/2017/07/03/machine-learning-7/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -641,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -710,6 +582,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -813,11 +696,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

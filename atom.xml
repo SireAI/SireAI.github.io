@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-26T02:00:32.000Z</updated>
+  <updated>2017-07-03T00:29:03.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习——特征缩放</title>
+    <link href="http://yoursite.com/2017/07/03/machine-learning-5/"/>
+    <id>http://yoursite.com/2017/07/03/machine-learning-5/</id>
+    <published>2017-07-03T01:02:37.000Z</published>
+    <updated>2017-07-03T00:29:03.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;特征缩放一般希望将特征值缩放到-1  到  1之间或者非常相近的区域之间，这样做的原因是为了便于梯度下降算法运行的更快。&lt;br&gt;只要缩放到相近似的范围即可&lt;/p&gt;
+&lt;p&gt;如图缩放的方式为：&lt;br&gt;（x-u)/s  ,其中x是特征值，u是均值，s是值范围。&lt;/p&gt;
+&lt;p&gt;如何确定梯度下降运行正确？&lt;/p&gt;
+&lt;p&gt;如何确定学习速率？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-28 下午12.16.05.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;由梯度下降公式可知，学习速率越大，j函数值下降的越快，越快速趋缓，在较少的迭代中，函数值迅速趋向缓和表明学习速率大&lt;/p&gt;
+&lt;p&gt;如果学习速率太小，收敛速度慢，如果学习速率太大，可能会错过收敛点&lt;/p&gt;
+&lt;p&gt;为了确定学习速率多少合适，可以先设定一个学习速率，迭代几次值，画出二维坐标，连线看先下降的趋势，如上图，通过下降趋势来判断设置的学习速率是偏大还是偏小&lt;/p&gt;
+&lt;p&gt;面对一个事物，我们选取什么特征进行建模需要多方考虑，有时候需要将多个特征综合起来表示成一个特征，比如房子的宽高我们可以表示为面积&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;特征缩放一般希望将特征值缩放到-1  到  1之间或者非常相近的区域之间，这样做的原因是为了便于梯度下降算法运行的更快。&lt;br&gt;只要缩放到相近似的
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习——微积分求极值</title>
+    <link href="http://yoursite.com/2017/07/03/machine-learning-6/"/>
+    <id>http://yoursite.com/2017/07/03/machine-learning-6/</id>
+    <published>2017-07-03T01:02:37.000Z</published>
+    <updated>2017-07-03T00:32:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;求代价函数最小值问题，如果是正规方程，我们可以对每个参数值求导并令导数为0。&lt;br&gt;我们队最小二乘法进行参数求导，最终得到的关系如上图所示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-28 下午11.40.00.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如果使用了正规方程，那么就不需要进行特征缩放（特征变量归一化处理，便于进行梯度下降）取相似范围，因为最终算出来的结果是一样的.&lt;/p&gt;
+&lt;p&gt;我们可以使用matlab或者Octave来进行正规方程的计算。&lt;br&gt;推荐使用pin函数来进行计算，因为正规方程中设计的矩阵逆运算，即是矩阵没有逆矩阵也会给出结果。&lt;br&gt;那么是什么导致举证不可逆呢？&lt;/p&gt;
+&lt;p&gt;存在多余的相似特征，我们可以删除他&lt;/p&gt;
+&lt;p&gt;太多的特征导致行数小于列数，我们可以通过删减特征以使举证为方阵，矩阵的可逆是建立在方阵基础上的&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-27 下午5.35.50.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;求代价函数最小值问题，如果是正规方程，我们可以对每个参数值求导并令导数为0。&lt;br&gt;我们队最小二乘法进行参数求导，最终得到的关系如上图所示&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习——分类及其代价函数</title>
+    <link href="http://yoursite.com/2017/07/03/machine-learning-7/"/>
+    <id>http://yoursite.com/2017/07/03/machine-learning-7/</id>
+    <published>2017-07-03T01:02:37.000Z</published>
+    <updated>2017-07-03T00:40:17.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午4.34.12.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一个这样的例子：0表示没有得肿瘤 1表示得了恶性肿瘤，在二维坐标系上建立关系，横轴表示肿瘤大小，纵轴代表是否得了恶性肿瘤。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午4.39.02.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们画一条线去拟合这些点，设置一个阈值，比如0.5，函数输出值大于0.5归类1  ，函数小于0.5归类0。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午4.46.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;当我们仅仅用线性回归去拟合，线性回归的的取值域往往不在[0,1]之间，这显然是不合理的。&lt;/p&gt;
+&lt;p&gt;下面引出logistic线性回归，解决二分类问题。&lt;/p&gt;
+&lt;p&gt;上面说到，我们希望函数的输出在0与1之间，logistic线性函数即满足这种特征，logistic函数解决了输出值必须在0，1内的问题，但是划分边界需要假设函数（决策边界）自己去定义。&lt;br&gt;hθ(x)=g(θTx)&lt;br&gt;z=θTx&lt;br&gt;g(z)=11+e−z&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午5.00.33.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们预测一个病人得了恶性肿瘤的概率&lt;br&gt;P(y=1|x;theTa)  读作在给定x，参数为theTa的情况下，得了恶性肿瘤的概率。&lt;/p&gt;
+&lt;p&gt;决策边界&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午5.12.57.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;假设函数为&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午5.26.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;有图可知，要是y = 1 ，那么g(z)必须大于或等于0.5 ，此时,z&amp;gt;0,即h(x)&amp;gt;=0&lt;br&gt;假设参数已经知道，分别  -3 ，1，1，那么假设函数为&lt;br&gt;h(x) = -3 + x1 + x2;&lt;br&gt;-3+x1+x2 &amp;gt;=0&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午5.30.40.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;那么这条线成为决策边界，那么h(x)=0实际上就是决策边界。但是并非所有情况下，决策边界都是线性的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午5.42.16.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如图所示，决策边界应当是个圆形，那么我我们可以使用多项式的方式去拟合这个边界。&lt;/p&gt;
+&lt;p&gt;逻辑回归的代价函数&lt;/p&gt;
+&lt;p&gt;我们不能直接使用最小二乘法作为逻辑回归的代价函数，因为将函数带入后会发现，代价函数是非凸函数，这给求极值带来了困难。因为h(x)的值域为[0,1]&lt;br&gt;我们使用去log的方式代替&lt;br&gt;J(θ)=1m∑i=1mCost(hθ(x(i)),y(i))&lt;br&gt;Cost(hθ(x),y)=−log(hθ(x)) if y = 1&lt;br&gt;Cost(hθ(x),y)=−log(1−hθ(x)) if y = 0&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-07-02 下午6.00.46.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;通过变换代价函数为等方向的凸，使得求极值跟容易。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-30 下午4.34.12.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一个这样的例子：0表示没有得肿瘤 1表示得了恶性肿瘤，在二维坐标系上建立关系，横轴表示肿瘤大小，纵轴代表是否得了恶性肿瘤。&lt;/p&gt;
+&lt;p&gt;&lt;img
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术教程" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习——线性回归</title>
@@ -92,7 +202,7 @@
     <link href="http://yoursite.com/2017/06/26/machine-learning-4/"/>
     <id>http://yoursite.com/2017/06/26/machine-learning-4/</id>
     <published>2017-06-26T01:02:37.000Z</published>
-    <updated>2017-06-26T02:32:18.000Z</updated>
+    <updated>2017-06-26T02:45:01.000Z</updated>
     
     <content type="html">&lt;p&gt; 本讲讲解梯度下降。&lt;br&gt;问题：对于关于参数的函数J，求解参数值是的J的取值最小&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/屏幕快照 2017-06-25 下午10.23.53.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
